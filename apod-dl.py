@@ -22,7 +22,7 @@ def get_apod(url, adir):
     spaceregex = re.compile(r'\s{2,}')
 
     print(f'getting image from {url}')
-    apod = sess.get(url, timeout=5, headers=headers, verify=True)
+    apod = sess.get(url, timeout=10, headers=headers, verify=True)
     apod.raise_for_status()
 
     apodsoup = BeautifulSoup(apod.text, features="lxml")
@@ -46,7 +46,7 @@ def get_apod(url, adir):
             albumfd.write(imgdate + ' - ' + imgfilename + ' - ' +  imgtitle + ' - ' + imgtext + '\n\n')
             print(f'{imgurl} --> {os.path.join(adir, imgfilename)}')
             if not os.path.exists(os.path.join(adir, imgfilename)):
-                imageresp = sess.get(imgurl, headers=headers, timeout=5, cookies=apod.cookies, stream=True, verify=True)
+                imageresp = sess.get(imgurl, headers=headers, timeout=10, cookies=apod.cookies, stream=True, verify=True)
                 imageresp.raise_for_status()
                 with open(os.path.join(adir, imgfilename), 'wb') as fd:
                     for chunk in imageresp.iter_content(chunk_size=10*1024):
