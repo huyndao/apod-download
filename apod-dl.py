@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import requests
 import re
-import os
+import os, time, random
 import argparse
 import json
 from bs4 import BeautifulSoup
@@ -18,9 +18,10 @@ parenturl = os.path.split(url)[0]
 headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'}
 spaceregex = re.compile(r'\s{2,}')
 
+sess = requests.Session()
+
 def get_apod(url):
     print(f'getting image from {url}')
-    sess = requests.Session()
     apod = sess.get(url, timeout=5, headers=headers, verify=True)
     apod.raise_for_status()
 
@@ -64,4 +65,7 @@ def get_apod(url):
 if __name__ == '__main__':
     while url:
         url = get_apod(url)
+
+        # sleep randomly between 0 to 3 seconds
+        time.sleep(random.randint(0,3))
 
