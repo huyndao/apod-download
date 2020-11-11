@@ -10,7 +10,7 @@ requests.packages.urllib3.disable_warnings()
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-u", "--url", required=False, type=str, help="start url.  Start from this page and go backward infinity")
-ap.add_argument("-o", "--oneday", required=False, action="store_true", help="just get today's apod and nothing else")
+ap.add_argument("-o", "--oneday", required=False, action="store_true", help="just get the one day's apod and nothing else")
 args = ap.parse_args()
 
 SAVEDIR = 'apod-images'

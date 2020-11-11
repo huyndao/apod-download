@@ -6,6 +6,18 @@ All images will be downloaded to a directory named **apod-images**.  If director
 Additionally, the image filename, image date and image text will be written to file: **apod-images/album_list.txt**
 
 
+#### Help
+```bash
+python3 apod-dl.py
+
+usage: apod-dl.py [-h] [-u URL] [-o]
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -u URL, --url URL  start url. Start from this page and go backward infinity
+  -o, --oneday       just get the one day's apod and nothing else
+```
+
 #### Download everything from today's date and backward infinity:
 ```bash
 python3 apod-dl.py 
