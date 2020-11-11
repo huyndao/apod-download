@@ -15,7 +15,7 @@ usage: apod-dl.py [-h] [-u URL] [-o]
 
 optional arguments:
   -h, --help         show this help message and exit
-  -u URL, --url URL  start url. Start from this page and go backward infinity
+  -u URL, --url URL  start url. Start from this page
   -o, --oneday       just get the one day's apod and nothing else
 ```
 
