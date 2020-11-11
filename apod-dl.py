@@ -8,8 +8,11 @@ from bs4 import BeautifulSoup
 import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 
+ap = argparse.ArgumentParser()
+ap.add_argument("-u", "--url", required=False, type=str, help="start url")
+args = ap.parse_args()
+
 SAVEDIR = 'apod-images'
-url = "https://apod.nasa.gov/apod/astropix.html"
 headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'}
 
 sess = requests.Session()
@@ -63,6 +66,11 @@ def get_apod(url, adir):
     return prevlink
 
 if __name__ == '__main__':
+    if args.url:
+        url = args.url
+    else:
+        url = "https://apod.nasa.gov/apod/astropix.html"
+
     while url:
         url = get_apod(url, SAVEDIR)
 
