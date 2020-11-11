@@ -45,4 +45,5 @@ python3 apod-dl.py -o -u "https://apod.nasa.gov/apod/ap201109.html"
 - python3
 - requests
 - beautifulsoup4
+- lxml
 
