@@ -1,4 +1,4 @@
-# `apod-dl.py`:  Download pictures from NASA's APOD (Astronomy Picture of the Day) site
+# **`apod-dl.py`**:  Download pictures from NASA's APOD (Astronomy Picture of the Day) site
 
 ## Description
 
