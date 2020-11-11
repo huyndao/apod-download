@@ -8,7 +8,7 @@ Additionally, the image filename, image date and image text will be written to f
 
 
 ## Help
-```bash
+```shell
 python3 apod-dl.py -h
 
 usage: apod-dl.py [-h] [-u URL] [-o]
@@ -21,22 +21,22 @@ optional arguments:
 
 ## Sample Usage
 #### Download everything from today's date and backward infinity:
-```bash
+```shell
 python3 apod-dl.py 
 ```
 
 #### Download from date's url and backward infinity:
-```bash
+```shell
 python3 apod-dl.py -u "https://apod.nasa.gov/apod/ap201109.html"
 ```
 
 #### Download today's picture only:
-```bash
+```shell
 python3 apod-dl.py -o
 ```
 
 #### Download date's picture only:
-```bash
+```shell
 python3 apod-dl.py -o -u "https://apod.nasa.gov/apod/ap201109.html"
 ```
 
