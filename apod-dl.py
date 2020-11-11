@@ -44,7 +44,7 @@ def get_apod(url, adir):
         with open(os.path.join(adir, "album_list.txt"), 'at') as albumfd:
             print(f'save album list to {os.path.join(adir, "album_list.txt")}')
             albumfd.write(imgdate + ' - ' + imgfilename + ' - ' +  imgtitle + ' - ' + imgtext + '\n\n')
-            print(f'{imgurl} --> {os.path.join(adir, imgfilename)}')
+            print(f'{imgdate} - {imgurl} --> {os.path.join(adir, imgfilename)}')
             if not os.path.exists(os.path.join(adir, imgfilename)):
                 imageresp = sess.get(imgurl, headers=headers, timeout=10, cookies=apod.cookies, stream=True, verify=True)
                 imageresp.raise_for_status()
