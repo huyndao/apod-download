@@ -16,7 +16,7 @@ usage: apod-dl.py [-h] [-u URL] [-d DIR] [-o]
 optional arguments:
   -h, --help         show this help message and exit
   -u URL, --url URL  start url. Start from this page
-  -d DIR, --dir DIR  name of directory to save files to
+  -d DIR, --dir DIR  name of directory to save files to. If omitted, will create and save files to ./apod-images/
   -o, --oneday       just get the one day's apod and nothing else
 ```
 
