@@ -1,10 +1,10 @@
-# apod-dl.py:  Download pictures from NASA's APOD (Astronomy Picture of the Day) site
+# `apod-dl.py`:  Download pictures from NASA's APOD (Astronomy Picture of the Day) site
 
 ## Description
 
-All images will be downloaded to a directory named **apod-images**.  If directory does not exist, the script will create one.
+All images will be downloaded to a directory named `apod-images`.  If directory does not exist, the script will create one.
 
-Additionally, the image filename, image date and image text will be written to file: **apod-images/album_list.txt**
+Additionally, the image filename, image date and image text will be written to file: `apod-images/album_list.txt`
 
 
 ## Help
