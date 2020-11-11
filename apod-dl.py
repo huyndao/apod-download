@@ -9,7 +9,8 @@ import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-u", "--url", required=False, type=str, help="start url")
+ap.add_argument("-u", "--url", required=False, type=str, help="start url.  Start from this page and go backward infinity")
+ap.add_argument("-o", "--oneday", required=False, type=str, help="just get today's apod and nothing else")
 args = ap.parse_args()
 
 SAVEDIR = 'apod-images'
@@ -71,9 +72,12 @@ if __name__ == '__main__':
     else:
         url = "https://apod.nasa.gov/apod/astropix.html"
 
-    while url:
-        url = get_apod(url, SAVEDIR)
+    if args.oneday:
+        _ = get_apod(url, SAVEDIR)
+    else:
+        while url:
+            url = get_apod(url, SAVEDIR)
 
-        # sleep randomly between 0 to 3 seconds
-        time.sleep(random.randint(0,3))
+            # sleep randomly between 0 to 3 seconds
+            time.sleep(random.randint(0,3))
 
