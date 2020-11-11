@@ -13,6 +13,12 @@ Press `Ctrl + C` while downloading to abort.
 pip install -r requirements.txt
 ```
 
+## Requirements
+- python3
+- requests
+- beautifulsoup4
+- lxml
+
 ## Help
 ```shell
 python3 apod-dl.py -h
@@ -46,10 +52,4 @@ python3 apod-dl.py -o
 ```shell
 python3 apod-dl.py -o -u "https://apod.nasa.gov/apod/ap201109.html"
 ```
-
-## Requirements
-- python3
-- requests
-- beautifulsoup4
-- lxml
 
