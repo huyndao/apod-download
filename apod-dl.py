@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright © 2020, Huy Dao
 import requests
 import re
 import os, time, random
