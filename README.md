@@ -6,6 +6,10 @@ By default, all images will be downloaded to a directory named **`apod-images`**
 
 Additionally, the image filename, image date and image text will be written to file: **`apod-images/album_list.txt`**
 
+## Install Dependencies
+```shell
+pip install -r requirements.txt
+```
 
 ## Help
 ```shell
