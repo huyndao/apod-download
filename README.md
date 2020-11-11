@@ -9,13 +9,14 @@ Additionally, the image filename, image date and image text will be written to f
 
 ## Help
 ```shell
-python3 apod-dl.py -h
+**python3 apod-dl.py -h**
 
-usage: apod-dl.py [-h] [-u URL] [-o]
+usage: apod-dl.py [-h] [-u URL] [-d DIR] [-o]
 
 optional arguments:
   -h, --help         show this help message and exit
   -u URL, --url URL  start url. Start from this page
+  -d DIR, --dir DIR  name of directory to save files to
   -o, --oneday       just get the one day's apod and nothing else
 ```
 
