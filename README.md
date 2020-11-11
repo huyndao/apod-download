@@ -8,7 +8,7 @@ Additionally, the image filename, image date and image text will be written to f
 
 #### Help
 ```bash
-python3 apod-dl.py
+python3 apod-dl.py -h
 
 usage: apod-dl.py [-h] [-u URL] [-o]
 
