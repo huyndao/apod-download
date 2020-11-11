@@ -33,7 +33,7 @@ def get_apod(url, adir):
     apodsoup = BeautifulSoup(apod.text, features="lxml")
     apod.close()
     prevlink = parenturl + '/' + apodsoup.find_all('a', string="<")[0].get('href')
-    imgelem = apodsoup.select('p a[href^="image"]')
+    imgelem = apodsoup.find_all('a', href=re.compile('^image'))
 
     if imgelem == []:
         print('No image link found\n')
