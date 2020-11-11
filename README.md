@@ -7,7 +7,7 @@ All images will be downloaded to a directory named **apod-images**.  If director
 Additionally, the image filename, image date and image text will be written to file: **apod-images/album_list.txt**
 
 
-### Help
+## Help
 ```bash
 python3 apod-dl.py -h
 
@@ -19,7 +19,7 @@ optional arguments:
   -o, --oneday       just get the one day's apod and nothing else
 ```
 
-### Sample Usage
+## Sample Usage
 #### Download everything from today's date and backward infinity:
 ```bash
 python3 apod-dl.py 
@@ -40,7 +40,7 @@ python3 apod-dl.py -o
 python3 apod-dl.py -o -u "https://apod.nasa.gov/apod/ap201109.html"
 ```
 
-### Requirements
+## Requirements
 - python3
 - requests
 - beautifulsoup4
