@@ -17,9 +17,9 @@ args = ap.parse_args()
 
 headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'}
 
-sess = requests.Session()
 
 def get_apod(url, adir):
+    sess = requests.Session()
     if not os.path.exists(adir):
         os.makedirs(adir, exist_ok=False)
 
