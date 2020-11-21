@@ -24,7 +24,7 @@ def get_apod(url, adir):
 
     apodsoup = BeautifulSoup(apod.text, features="lxml")
     apod.close()
-    prevlink = parenturl + '/' + apodsoup.find_all('a', string="<")[0].get('href')
+
     imgelem = apodsoup.find_all('a', href=re.compile('^image'))
 
     if imgelem == []:
@@ -55,6 +55,11 @@ def get_apod(url, adir):
             else:
                 print(f'file {imgfilename} already downloaded\n')
             albumfd.flush()
+
+    try:
+        prevlink = parenturl + '/' + apodsoup.find_all('a', string="<")[0].get('href')
+    except Exception as exc:
+        print(f'Can not find previous link')
 
     sess.close()
     return prevlink
