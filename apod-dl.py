@@ -9,16 +9,8 @@ from bs4 import BeautifulSoup
 import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 
-ap = argparse.ArgumentParser()
-ap.add_argument("-u", "--url", required=False, type=str, help="start url.  Start from this page.  If omitted, will start with today's page")
-ap.add_argument("-d", "--dir", required=False, type=str, help="name of directory to save files to.  If omitted, will create and save files to ./apod-images/")
-ap.add_argument("-o", "--oneday", required=False, action="store_true", help="just get the one day's apod and nothing else")
-args = ap.parse_args()
-
-headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'}
-
-
 def get_apod(url, adir):
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'}
     sess = requests.Session()
     if not os.path.exists(adir):
         os.makedirs(adir, exist_ok=False)
@@ -68,6 +60,12 @@ def get_apod(url, adir):
     return prevlink
 
 if __name__ == '__main__':
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-u", "--url", required=False, type=str, help="start url.  Start from this page.  If omitted, will start with today's page")
+    ap.add_argument("-d", "--dir", required=False, type=str, help="name of directory to save files to.  If omitted, will create and save files to ./apod-images/")
+    ap.add_argument("-o", "--oneday", required=False, action="store_true", help="just get the one day's apod and nothing else")
+    args = ap.parse_args()
+
     if args.url:
         url = args.url
     else:
