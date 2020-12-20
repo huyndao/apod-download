@@ -10,7 +10,7 @@ import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 
 def get_apod(url, adir):
-    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'}
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:84.0) Gecko/20100101 Firefox/84.0'}
     sess = requests.Session()
     if not os.path.exists(adir):
         os.makedirs(adir, exist_ok=False)
