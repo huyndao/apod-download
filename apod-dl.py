@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-# Copyright © 2020, Huy Dao
+# Copyright © 2023, Huy Dao
 import requests
 import re
 import os, time, random
 import argparse
 import json
+from tqdm import tqdm, trange
 from bs4 import BeautifulSoup
 import requests.packages.urllib3
 
@@ -66,8 +67,8 @@ def get_apod(url, adir):
                 )
                 imageresp.raise_for_status()
                 with open(os.path.join(adir, imgfilename), "wb") as fd:
-                    for chunk in imageresp.iter_content(chunk_size=10 * 1024):
-                        print(".", end="", flush=True)
+                    for chunk in tqdm(imageresp.iter_content(chunk_size=10 * 1024)):
+                        # print(".", end="", flush=True)
                         fd.write(chunk)
                     print("\n")
                     fd.flush()
