@@ -65,9 +65,17 @@ def get_apod(url, adir):
                     stream=True,
                     verify=True,
                 )
+                total = int(imageresp.headers.get("content-length", 0))
+                print(total)
                 imageresp.raise_for_status()
                 with open(os.path.join(adir, imgfilename), "wb") as fd:
-                    for chunk in tqdm(imageresp.iter_content(chunk_size=10 * 1024)):
+                    for chunk in tqdm(
+                        imageresp.iter_content(chunk_size=1024),
+                        total=total / 1024,
+                        unit="kiB",
+                        unit_scale=True,
+                        unit_divisor=1024,
+                    ):
                         # print(".", end="", flush=True)
                         fd.write(chunk)
                     print("\n")
