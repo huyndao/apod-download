@@ -5,7 +5,7 @@ import re
 import os, time, random
 import argparse
 import json
-from tqdm import tqdm, trange
+from tqdm.auto import tqdm, trange
 from bs4 import BeautifulSoup
 import requests.packages.urllib3
 
